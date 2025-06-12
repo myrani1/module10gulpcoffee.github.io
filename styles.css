@@ -1,0 +1,493 @@
+/* Universal Box-Sizing Model */
+html {
+    box-sizing: border-box; /* Applies border-box to html */
+  }
+  
+  *, *::before, *::after {
+    box-sizing: inherit; /* All other elements inherit border-box */
+  }
+  
+  /* --- Base Styles (Mobile First - Apply to all pages) --- */
+  body {
+    background-color: #082B59; /* Dark blue background for body */
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    line-height: 1.8; /* Adjusted for better readability */
+    color: #333; /* Default text color for general content */
+  }
+  
+  h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+    color: #59331d; /* Default heading color */
+  }
+  
+  h1 {
+    font-size: 2.2rem; /* Slightly adjusted base h1 size */
+    margin-bottom: 0.5rem;
+    text-align: center; /* Center headings by default */
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  /* Make images flexible */
+  img {
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Removes extra space below images */
+  }
+  
+  a {
+    color: #59331d;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline; /* Add underline on hover for clarity */
+  }
+  
+  /* Reusable Button Style */
+  .button {
+    display: inline-block;
+    background-color: #59331D;
+    border-radius: 10px;
+    padding: 0.75rem 1.5rem; /* Adjusted padding */
+    margin: 1.5rem auto; /* Centered with auto margins for block-level */
+    color: #f2f2f2;
+    text-decoration: none;
+    border: 3px solid #59331d;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+  }
+  
+  .button:hover {
+    background-color: #f2f2f2;
+    color: #59331d;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Screen Reader Only Text for Accessibility */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  
+  /* --- Header & Navigation Styles --- */
+  header {
+    border-bottom: 10px solid #d98555;
+    background-color: #082B59;
+    padding: 1rem;
+  }
+  
+  nav ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column; /* Stack vertically on small screens */
+    align-items: center; /* Center items */
+    gap: 1rem; /* Space between nav items */
+  }
+  
+  nav li {
+    font-size: 1.3rem;
+  }
+  
+  nav .logo img {
+    max-width: 150px;
+  }
+  
+  nav .logo {
+    flex-basis: 100%; /* Take full width on small screens */
+    text-align: center;
+    margin-bottom: 1rem; /* Space below logo when stacked */
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem 1rem;
+  }
+  
+  nav a:hover {
+    color: #d98555;
+  }
+  
+  /* --- Footer Styles --- */
+  footer {
+    background-color: #082B59;
+    color: #f2f2f2;
+    text-align: center;
+    border-top: 10px solid #d98555;
+    padding: 2rem 1rem;
+  }
+  
+  footer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 1rem; /* Space between social icons */
+    margin-top: 1rem;
+  }
+  
+  footer a {
+    color: #f2f2f2;
+    font-size: 2rem;
+    display: block;
+  }
+  
+  /* --- Page-Specific Content Areas --- */
+  
+  /* Main Background for About and Products Pages */
+  /* This div wraps the .main section and provides a background image/color */
+  .main-bkgd {
+    background: #ffffff url(https://static.bc-edx.com/uxui/uxui-v3/m9/coffee-brand-assets/coffee-beans-small.jpg) repeat-x bottom; /* Default for About/Products */
+    background-size: cover;
+    background-position: center bottom;
+    padding-bottom: 300px; /* Provides space for background image to show */
+    padding-top: 2rem;
+  }
+  
+  /* Main Content Area (White Box) for About and Products Pages */
+  /* This section sits inside .main-bkgd and contains the primary content */
+  .main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white for content */
+    border-radius: 10px;
+    display: flex; /* Default to column for children (article, figure, product-grid) */
+    flex-direction: column;
+    gap: 2rem; /* Space between main elements */
+  }
+  
+  /* General Article Styling (used on About and Products Intro) */
+  .main article {
+    width: 100%;
+    text-align: center; /* Center content in intro article */
+  }
+  
+  .main article p {
+    max-width: 800px; /* Constrain paragraph width for readability */
+    margin: 1rem auto; /* Center paragraphs */
+  }
+  
+  /* About Page Specific Image Figure (the coffee shop picture) */
+  /* This is styled to integrate into the grid layout on larger screens */
+  .about-image-figure {
+    margin: 0; /* Reset default figure margin */
+    padding: 0;
+    background-color: transparent; /* Ensure no unwanted background */
+    border-radius: 0; /* Ensure no unwanted border-radius */
+    display: flex; /* Use flex to center figcaption vertically */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .about-image-figure figcaption {
+    color: #666; /* Adjust color for white background */
+    padding: 0.5rem;
+    text-align: center;
+    font-style: italic;
+    margin-top: 10px;
+  }
+  
+  
+  /* Product Listing Grid Styles (for Products Page & Home Featured) */
+  .product-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 2rem; /* Space between product items */
+    padding: 1rem; /* Padding inside the grid container */
+    background-color: #f8f8f8; /* Light background for the grid area */
+    border-radius: 8px;
+  }
+  
+  .product-item {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Stack content within each product item */
+    justify-content: space-between; /* Push button to bottom */
+  }
+  
+  .product-item img {
+    border-radius: 4px;
+    margin-bottom: 1rem;
+  }
+  
+  .product-item h3 {
+    font-size: 1.4rem;
+    color: #59331d;
+    margin-bottom: 0.5rem;
+  }
+  
+  .product-item .price {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #A0522D;
+    margin-bottom: 0.5rem;
+  }
+  
+  .product-item .description {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+  
+  .product-item .button {
+    margin-top: auto; /* Pushes button to the bottom */
+    width: 90%; /* Make button fill most of the width */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+  
+  
+  /* --- Home Page Specific Sections --- */
+  
+  /* Hero Section (full screen image background) */
+  .hero-bkgd {
+    background: url('https://static.bc-edx.com/uxui/uxui-v3/m9/coffee-brand-assets/hero-home-mobile.jpg') no-repeat center center/cover; /* Mobile hero background */
+    height: 80vh; /* Make hero cover 80% of viewport height */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in height calculation */
+  }
+  
+  .hero-content {
+    max-width: 800px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for text readability */
+    padding: 30px;
+    border-radius: 10px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem; /* Slightly smaller for mobile hero */
+    margin-bottom: 1rem;
+    color: white;
+    line-height: 1.2;
+  }
+  
+  .hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: white;
+  }
+  
+  .hero-content .button {
+    background-color: #d98555;
+    border: 3px solid #d98555;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    width: fit-content;
+    margin: 0 auto;
+  }
+  
+  /* Home Page Secondary Content Sections (below the hero) */
+  .home-intro-section,
+  .home-featured-products {
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .home-intro-section h2,
+  .home-featured-products h2 {
+      font-size: 2rem;
+      color: #59331d;
+      margin-bottom: 1.5rem;
+  }
+  
+  .home-intro-section p {
+      max-width: 700px;
+      margin: 0 auto 2rem auto;
+      line-height: 1.6;
+  }
+  
+  /* Adjust .product-grid and .product-item for Home Featured Products section */
+  .home-featured-products .product-grid {
+      padding: 0; /* No padding around the grid inside this section */
+      background-color: transparent; /* No background color */
+      box-shadow: none; /* No shadow */
+  }
+  
+  .home-featured-products .product-item {
+      background-color: #f2f2f2; /* Lighter background for individual featured items */
+      box-shadow: none; /* No shadow */
+      border: none; /* No border */
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  }
+  
+  .home-featured-products .product-item img {
+      margin-bottom: 0.5rem;
+  }
+  
+  .home-featured-products .product-item .description {
+      display: none; /* Hide description for shorter featured items on home page */
+  }
+  
+  .home-featured-products .product-item .button {
+      margin-top: auto;
+      width: auto; /* Allow button to size naturally */
+      padding: 0.5rem 1rem; /* Smaller padding */
+  }
+  
+  
+  /* --- Media Queries for Responsiveness --- */
+  
+  /* Medium Viewports (e.g., Tablets, larger phones) */
+  @media screen and (min-width: 768px) {
+    /* Header & Nav */
+    nav ul {
+      flex-direction: row; /* Horizontal navigation */
+      justify-content: space-between;
+    }
+    nav .logo {
+      flex-basis: auto; /* Allow logo to size naturally */
+      text-align: left;
+      margin-bottom: 0;
+    }
+    nav li {
+      margin: 0 1rem;
+    }
+  
+    /* Main Background for About/Products */
+    .main-bkgd {
+      background-image: url('https://static.bc-edx.com/uxui/uxui-v3/m9/coffee-brand-assets/coffee-beans-medium.jpg');
+    }
+  
+    /* About Page Content Layout */
+    .main.about-page-content { /* Target ONLY the main section on the about page */
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* Two equal columns */
+      gap: 3rem;
+      align-items: start;
+      padding: 3rem;
+    }
+    .main.about-page-content article {
+      grid-column: 1 / 2;
+    }
+    .main.about-page-content .about-image-figure {
+      grid-column: 2 / 3;
+    }
+  
+    /* Products Page Grid */
+    .product-grid {
+      grid-template-columns: 1fr 1fr; /* Two columns for product items */
+      gap: 2rem;
+      padding: 1.5rem;
+    }
+  
+    /* Home Page Hero */
+    .hero-bkgd {
+      background-image: url('https://static.bc-edx.com/uxui/uxui-v3/m9/coffee-brand-assets/hero-home-tablet.jpg'); /* Tablet hero background */
+      height: 70vh; /* Adjust height */
+    }
+    .hero-content h1 {
+      font-size: 3.5rem;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+    }
+  
+    /* Home Page Featured Products Grid */
+    .home-featured-products .product-grid {
+      grid-template-columns: 1fr 1fr; /* Two columns */
+      gap: 2rem;
+    }
+  }
+  
+  
+  /* Large Viewports (e.g., Desktops) */
+  @media screen and (min-width: 1200px) {
+    /* Header & Nav */
+    nav ul {
+      justify-content: flex-end; /* Align nav items to the right */
+      gap: 2rem;
+    }
+    nav .logo {
+      margin-right: auto; /* Push logo to the left */
+    }
+  
+    /* Main Background for About/Products */
+    .main-bkgd {
+      background-image: url('https://static.bc-edx.com/uxui/uxui-v3/m9/coffee-brand-assets/coffee-beans-large.jpg');
+    }
+  
+    /* About Page Content Layout */
+    .main.about-page-content {
+      grid-template-columns: 2fr 1fr; /* Article takes 2 parts, image takes 1 part */
+      gap: 4rem;
+      padding: 4rem;
+    }
+    .main.about-page-content .about-image-figure {
+      align-self: center; /* Vertically center the image */
+    }
+  
+    /* Products Page Grid */
+    .product-grid {
+      grid-template-columns: repeat(4, 1fr); /* Four columns */
+      gap: 3rem;
+      padding: 2rem;
+    }
+  
+    /* Home Page Hero */
+    .hero-bkgd {
+      background-image: url('https://static.bc-edx.com/uxui/uxui-v3/m9/coffee-brand-assets/hero-home-desktop.jpg'); /* Desktop hero background */
+      height: 90vh; /* Adjust height */
+    }
+    .hero-content h1 {
+      font-size: 4.5rem;
+    }
+    .hero-content p {
+      font-size: 1.3rem;
+    }
+  
+    /* Home Page Featured Products Grid */
+    .home-featured-products .product-grid {
+      grid-template-columns: repeat(3, 1fr); /* Three columns for featured products */
+      gap: 3rem;
+    }
+  }
